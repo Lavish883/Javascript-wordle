@@ -1,0 +1,204 @@
+html,
+body{
+    margin:0px;
+    background-color:black;
+    height:100%;
+    font-family:sans-serif;
+}
+header{
+    width:100%;
+    border-bottom:solid 1px #3a3a3c;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+header span{
+    color:white;
+    font-size:30px;
+    font-weight:800;
+}
+.gameContainer{
+    /*border:dashed 1px white*/
+    height:100%;
+    width:500px;
+    display:flex;
+    flex-flow:column;
+}
+main{
+    display:flex;
+    justify-content:center;
+    height:calc(100% - 53px)
+}
+.words {
+    /*border:solid red 1px; */
+    display:grid;
+    grid-template-rows: repeat(6, 65px);
+    padding:20px;
+    gap:10px;
+    justify-content:center;
+}
+.words .row{
+    display:grid;
+    grid-template-columns: repeat(5, 65px);
+    gap:10px;
+}
+.words .row .column{
+    border:solid 2px #3a3a3c;
+    color:white;
+    font-size:35px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    user-select:none;
+}
+
+.pop{
+    animation:typingPop;
+    animation-duration:500ms;
+}
+
+.flip {
+    animation:flip;
+    animation-duration:800ms;
+    animation-timing-function: ease-in;
+}
+
+.shake {
+    animation:shake;
+    animation-duration:1000ms;
+    animation-timing-function: ease-in;
+}
+
+.bounce {
+    animation:bounce;
+    animation-duration:800ms;
+    animation-timing-function: ease-in;
+}
+
+.keyboard{
+    display:flex;
+    flex: 1 auto; 
+    flex-direction:column;
+    margin-top:5px;
+}
+.keyboard .keysContainer{
+    display:flex;
+    flex: 0.33;
+    /* border:solid 1px white; */
+    padding:5px;
+    justify-content:center;
+}
+.key {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:15px;
+    color:white;
+    border-radius:4px;
+    min-width:42px;
+    height:100%;
+    margin:0px 5px;
+    user-select: none;
+    cursor:pointer;
+}
+
+.gray {
+    background-color: #3a3a3c;
+    border: none;
+}
+
+.yellow {
+    background-color: #b59f3b;
+    border: none;
+}
+
+.green {
+    background-color: #538d4e;
+    border: none;
+}
+
+.normalKeyBack{
+    background-color:#818384;
+}
+
+
+.noBack{
+    background:none;
+}
+
+@keyframes typingPop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    40% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes flip {
+    0% {
+        transform:rotateX(0deg)
+    }
+
+    33% {
+        transform:rotateX(-90deg)
+    }
+
+    66% {
+        transform:rotateX(-90deg)
+
+    }
+
+    100% {
+        transform:rotateX(0deg)
+    }
+}
+
+@keyframes bounce {
+    0%, 20% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+
+    80% {
+        transform: translateY(2px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translateX(-1px);
+    }
+
+    20%, 80% {
+        transform: translateX(2px);
+    }
+
+    30%, 50%, 70% {
+        transform: translateX(-4px);
+    }
+
+    40%, 60% {
+        transform: translateX(4px);
+    }
+}
